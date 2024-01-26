@@ -3,9 +3,10 @@ import { MdArrowOutward } from "react-icons/md";
 type Props = {
   dataProjects: any;
   index: number;
+  openModal: any;
 };
 
-const Projects = ({ dataProjects, index }: Props) => {
+const Projects = ({ dataProjects, index, openModal}: Props) => {
   return (
     <div className="flex flex-col lg:flex-row md:flex-row justify-center items-center lg:justify-start md:justify-start lg:items-start  text-white cursor-pointer hover:bg-[] rounded-md py-5 gap-2">
       <div className="lg:w-[30%] md:w-[30%] p-1 lg:ps-4">
@@ -17,9 +18,14 @@ const Projects = ({ dataProjects, index }: Props) => {
       </div>
       <div className="lg:w-[70%] md:w-[70%]">
         <div className="flex justify-start gap-1 pr-3 items-end">
+          {
+            index === 1 ? (
+              <p onClick={openModal} className="text-md font-bold">{dataProjects.title}</p>
+            ):
           <a href={dataProjects.link} target="_blank" rel="noopener noreferrer">
             <p className="text-md font-bold">{dataProjects.title}</p>
           </a>
+          }
           <MdArrowOutward className="text-md " />
         </div>
         <p className="text-xs text-gray-300">{dataProjects.date}</p>

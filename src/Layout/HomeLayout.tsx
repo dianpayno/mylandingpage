@@ -5,11 +5,23 @@ import { useEffect, useState } from "react";
 import Projects from "../components/Main/Projects";
 import { GoProjectSymlink } from "react-icons/go";
 import { projects } from "../mocks/menubar";
+import { IoCloseCircle } from "react-icons/io5";
+import ModalVideo from "../components/ModalVideo/Index";
 
 const HomeLayout = () => {
   const [scroll, setScroll] = useState(200);
   const [active, setActive] = useState(0);
+  const[openModal, setOpenModal] = useState(false)
 
+  const handleOpenModal = () => {
+    setOpenModal(true)
+    document.body.style.overflow = 'hidden'; 
+  }
+
+  const handleCloseModal = () => {
+    setOpenModal(false)
+    document.body.style.overflow = '';
+  }
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY === scroll || window.scrollY > scroll) {
@@ -57,14 +69,18 @@ const HomeLayout = () => {
       projects.map((item:any, index:number)=>{
         return (
         <div key={index}>
-          <Projects index={index} dataProjects={item} />
+          <Projects index={index}  openModal={handleOpenModal} dataProjects={item} />
         </div>
         )
       })
      }
-      
         </div>
       </motion.div>
+      {
+        openModal && <ModalVideo openModal={handleCloseModal}/>
+      }
+     
+      
     </div>
   );
 };

@@ -70,7 +70,7 @@ export const projects = [
   {
     id:1,
     title: "PERFECT LEGENDS (Trivia Games)",
-    date:"Januari 2023",
+    date:"Januari 2024",
     desc:`Perfect Legends is an Android-based mobile game app built with React Native, this application is a team project created during bootcamp in Dumbways,
     As a frontend developer, I am responsible for creating an attractive and responsive UI display,
     From here I learned how to handle a project as a team, how to communicate between frontend and backend, solve bugs together, discuss developing new features, work together until this project can be completed according to the specified deadline.
@@ -86,7 +86,7 @@ export const projects = [
   {
     id:1,
     title: "Circle Web Apps",
-    date:"Januari 2023",
+    date:"Januari 2024",
     desc:`Circle web apps is a project assignment that I completed during bootcamp at Dumbways with a deadline of two weeks, this is a fullstack social media application project similar to X or Twitter with a frontend react js typescript combination of chakra ui, the backend service uses node js, express js, typeorm, postgresql.
     Try to upload threads with multiple images, add likes and comments on threads, and also follow people. 
     `,
